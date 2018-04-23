@@ -9,7 +9,6 @@ class App extends Component {
 
 state = {
   color: "red",
-  footer_color: "blue",
   url: "https://t2.ea.ltmcdn.com/fr/images/7/5/9/pourquoi_mon_chat_me_leche_les_cheveux_1957_600.jpg",
   height: "100px",
 }
@@ -17,6 +16,15 @@ state = {
 modify = (e) => {
   this.setState(
     {[e.target.name]: e.target.value}
+  )
+}
+
+resetFooter = ({color, height, url, e}) => {
+  this.setState({
+    footer_color: color,
+    url: url,
+    height:height,
+  }
   )
 }
 
@@ -43,7 +51,12 @@ modify = (e) => {
       </Grid.Column>
 
       <Grid.Column width={16}>
-          <CustomFooter footer_color={footer_color} footer_url={url} footer_height={height}/>
+          <CustomFooter 
+          footer_color={footer_color} 
+          footer_url={url} 
+          footer_height={height}
+          onReset={this.resetFooter}
+          />
       </Grid.Column>
 
       </Grid>
