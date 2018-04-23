@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import LandingPage from './LandingPage';
 import CustomFooter from './CustomFooter';
+import {Grid, Container, Form} from 'semantic-ui-react'
 
 class App extends Component {
 
@@ -22,20 +23,30 @@ modify = (e) => {
   render() {
     const {color, footer_color, url, height} = this.state
     return (
-      <div className="App">
-       <LandingPage navbar_color={color}/>
-       <form >
-         <input type="text" onChange={this.modify} name="color" value={color} />
-         <br/>
-         <br/>
-         <input type="text" onChange={this.modify} name="footer_color" value={footer_color} />
-         <input type="text" onChange={this.modify} name="url" value={url} />
-         <input type="text" onChange={this.modify} name="height" value={height} />
-       </form>
+      <Grid className="App">
 
-      <CustomFooter footer_color={footer_color} footer_url={url} footer_height={height}/>
+       <Grid.Column width={16}>
+          <LandingPage navbar_color={color}/>
+      </Grid.Column>
 
-      </div>
+      <Grid.Column width={16}>
+          <Container>
+          <Form >
+            <Form.Input label="couleur navbar" type="text" onChange={this.modify} name="color" value={color} />
+            <Form.Group widths="equal">
+              <Form.Input label="couleur footer" type="text" onChange={this.modify} name="footer_color" value={footer_color} />
+              <Form.Input label="url" type="text" onChange={this.modify} name="url" value={url} />
+              <Form.Input label="height" type="text" onChange={this.modify} name="height" value={height} />
+            </Form.Group>
+          </Form>
+          </Container>
+      </Grid.Column>
+
+      <Grid.Column width={16}>
+          <CustomFooter footer_color={footer_color} footer_url={url} footer_height={height}/>
+      </Grid.Column>
+
+      </Grid>
     );
   }
 }
