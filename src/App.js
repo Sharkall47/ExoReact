@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import LandingPage from './LandingPage';
 import CustomFooter from './CustomFooter';
-import {Grid, Container, Form} from 'semantic-ui-react'
+import FooterForm from './FooterForm'
+import {Grid, Container, Form, Button} from 'semantic-ui-react'
 
 class App extends Component {
 
@@ -28,6 +29,8 @@ resetFooter = ({color, height, url, e}) => {
   )
 }
 
+
+
   render() {
     const {color, footer_color, url, height} = this.state
     return (
@@ -39,7 +42,7 @@ resetFooter = ({color, height, url, e}) => {
 
       <Grid.Column width={16}>
           <Container>
-          <Form >
+          <Form>
             <Form.Input label="couleur navbar" type="text" onChange={this.modify} name="color" value={color} />
             <Form.Group widths="equal">
               <Form.Input label="couleur footer" type="text" onChange={this.modify} name="footer_color" value={footer_color} />
@@ -47,6 +50,9 @@ resetFooter = ({color, height, url, e}) => {
               <Form.Input label="height" type="text" onChange={this.modify} name="height" value={height} />
             </Form.Group>
           </Form>
+          </Container>
+          <Container>
+            <FooterForm onSubmitForm={this.resetFooter}/>
           </Container>
       </Grid.Column>
 
