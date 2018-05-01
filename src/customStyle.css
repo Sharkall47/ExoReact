@@ -1,0 +1,11 @@
+.CustomAncre {
+    margin: 0 25px;
+    color: white;
+    font-weight: bold;
+}
+
+.customLogo {
+    border-radius: 1000px;
+    border: 2px solid white;
+    margin-top: 20px;
+}
