@@ -11,6 +11,8 @@ import FooterExo from './FooterExo'
 
 class App extends Component {
 
+    // Comment by Jimmy
+
     state = {
         lapis: '#26619c',
         logo_url: 'https://yt3.ggpht.com/a-/AJLlDp1yh7LpDl_fQQd0iWf_u7k-Y7M5y4ENxMcFfQ=s900-mo-c-c0xffffffff-rj-k-no',
