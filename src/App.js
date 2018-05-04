@@ -7,6 +7,7 @@ import NavbarExo from './NavbarExo'
 import AccueilExo from './AccueilExo'
 import BlablaContent from './BlablaContent'
 import FooterExo from './FooterExo'
+import _ from 'lodash'
 
 
 class App extends Component {
@@ -24,12 +25,17 @@ class App extends Component {
     }
 
 
-    handleFooterChange = ({color, titre, url}) => {
+    handleFooterChange = ({color, title, url}) => {
+        console.log('url', url)
         this.setState({
           lapis: color,
           home_url: url,
-          title_text: titre,
+          title_text: title,
         })
+        if(!url){
+            const random_number = _.random(0, 1000);
+            this.setState({home_url: "https://picsum.photos/200/300/?image=" + random_number})
+        }
     }
 
 
@@ -39,8 +45,6 @@ class App extends Component {
           home_url: url,
         })
       }
-
-    handleFormChange
 
 
     render(){
