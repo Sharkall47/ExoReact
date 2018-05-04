@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Grid, Divider, Container, Button } from 'semantic-ui-react'
 import './customStyle.css'
 import _ from 'lodash'
+import { random_url } from './myfunctions';
 
 export default class AccueilExo extends Component {
     state = {
@@ -10,8 +11,7 @@ export default class AccueilExo extends Component {
     }
 
     random = () => {
-        const random_number = _.random(0, 1000);
-        this.props.onRandom({url: "https://picsum.photos/200/300/?image=" + random_number})
+        this.props.onRandom({url: random_url()})
     }
 
     render(){
