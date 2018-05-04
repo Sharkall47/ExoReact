@@ -24,14 +24,13 @@ class App extends Component {
     }
 
 
-    resetFooter = ({color, titre, url, e}) => {
+    handleFooterChange = ({color, titre, url}) => {
         this.setState({
           lapis: color,
           home_url: url,
-          title_text:titre,
-        }
-        )
-      }
+          title_text: titre,
+        })
+    }
 
 
       randomPic = ({url, e}) => {
@@ -40,6 +39,8 @@ class App extends Component {
           home_url: url,
         })
       }
+
+    handleFormChange
 
 
     render(){
@@ -64,9 +65,9 @@ class App extends Component {
                     <BlablaContent blabla_title={blabla_title} text_Lorem={text_Lorem}/>
                 </Grid.Column>
                 <Grid.Column width={16}>
-                    <FooterExo 
+                    <FooterExo
                         footer_color={lapis}
-                        test={this.resetFooter}/>
+                        onDataChange={this.handleFooterChange}
                     />
                 </Grid.Column>
             </Grid>
