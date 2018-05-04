@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Grid, Divider, Container, Button } from 'semantic-ui-react'
 import './customStyle.css'
+import _ from 'lodash'
 
 export default class AccueilExo extends Component {
     state = {
@@ -9,7 +10,8 @@ export default class AccueilExo extends Component {
     }
 
     random = () => {
-        this.props.onRandom({url: "https://picsum.photos/200/300/?random"})
+        const random_number = _.random(0, 1000);
+        this.props.onRandom({url: "https://picsum.photos/200/300/?image=" + random_number})
     }
 
     render(){
