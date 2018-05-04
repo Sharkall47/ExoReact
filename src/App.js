@@ -69,7 +69,7 @@ class App extends Component {
                 <Grid.Column width={16}>
                     <FooterExo 
                         footer_color={lapis}
-                        onSubmitForm={this.resetFooter}/>
+                        test={this.resetFooter}/>
                     />
                 </Grid.Column>
             </Grid>
